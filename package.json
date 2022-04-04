@@ -1,0 +1,32 @@
+{
+  "name": "m1p9mean-mahery",
+  "version": "1.0.0",
+  "description": "> *ANDRISOANIAINA* Mahery Tsitohaina \\ > **ETU000975**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaheryTsito/m1p9mean-Mahery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "env-var": "^7.1.1",
+    "express": "^4.17.3",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.8"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.3"
+  },
+  "bugs": {
+    "url": "https://github.com/MaheryTsito/m1p9mean-Mahery/issues"
+  },
+  "homepage": "https://github.com/MaheryTsito/m1p9mean-Mahery#readme"
+}
