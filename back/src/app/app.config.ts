@@ -10,4 +10,8 @@ export const config = {
   mongodb: {
     dbURI: env.get("DB_CONNECT_STRING").required().asString(),
   },
+  jwt: {
+    secretKey: env.get("JWT_SECRET").required().asString(),
+    expiration: env.get("JWT_EXPIRATION").required().asIntPositive(),
+  },
 };
