@@ -4,21 +4,27 @@
   "description": "> *ANDRISOANIAINA* Mahery Tsitohaina \\ > **ETU000975**",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec npx ts-node src/server.ts"
+  },
+  "compilerOptions": {
+    "module": "CommonJS"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaheryTsito/m1p9mean-Mahery.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mahery",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "env-var": "^7.1.1",
     "express": "^4.17.3",
     "mongodb": "^4.4.1",
-    "mongoose": "^6.2.8"
+    "mongoose": "^6.2.8",
+    "ts-node": "^10.7.0"
   },
   "devDependencies": {
     "eslint": "^8.11.0",

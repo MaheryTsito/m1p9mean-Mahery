@@ -8,6 +8,6 @@ export const config = {
     port: env.get("NODE_PORT").required().asIntPositive(),
   },
   mongodb: {
-    dbURI: env.get("DB_CONNECT_STRING").required().asString();
-  }
+    dbURI: env.get("DB_CONNECT_STRING").required().asString(),
+  },
 };

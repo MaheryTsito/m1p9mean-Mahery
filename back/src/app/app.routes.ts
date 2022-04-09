@@ -2,13 +2,13 @@ import { Router } from "express";
 class AppRouter {
   router: Router;
   constructor() {
-    this.router = new Router();
+    this.router = Router();
     this.initRoutes();
   }
   initRoutes() {
-    this.router.get("/api-status", (req, resp) => {
+    this.router.get("/status", (req, resp) => {
       resp.json({ status: "API is OK" });
     });
   }
 }
-const appRouter = new AppRouter();
+export const appRouter = new AppRouter().router;

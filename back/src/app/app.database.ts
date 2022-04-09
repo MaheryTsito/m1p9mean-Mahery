@@ -3,7 +3,7 @@ import { config } from "./app.config";
 class Database {
   async connect(callback: () => void) {
     const connectStr = config.mongodb.dbURI;
-    console.log("Trying to connect to database..");
+    console.log("Trying to connect to database...");
     mongoose
       .connect(connectStr)
       .then(() => {
