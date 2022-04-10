@@ -38,4 +38,4 @@ class DishRoute {
   }
 }
 
-export const dishRoutes = new DishRoute();
+export const dishRoutes = new DishRoute().router;

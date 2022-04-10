@@ -30,7 +30,7 @@ const localStrategy = new LocalStrategy(
 const jwtStrategy = new JwtStrategy(
   {
     secretOrKey: config.jwt.secretKey,
-    jwtFromµRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   },
   async (jwtPayload, done) => {
     try {
