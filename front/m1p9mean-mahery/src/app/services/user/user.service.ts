@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UserService {
-  private token: string = null;
+  private token: string = "";
 
   constructor(protected httpClient: HttpClient) {}
 
