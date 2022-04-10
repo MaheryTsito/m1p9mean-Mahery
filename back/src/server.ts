@@ -4,5 +4,5 @@ import { database } from "./app/app.database";
 
 console.log("Starting E-kaly application...");
 database.connect(async () => {
-  const server = app.init(config.server.port);
+  const server = app.init(+process.env.PORT || config.server.port);
 });
