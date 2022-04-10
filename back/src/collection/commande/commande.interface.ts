@@ -1,7 +1,7 @@
 import { User } from "../user/user.interface";
 import { DishType } from "../dish/dish.interface";
 
-export const DELVERY_PRICE: Number = 3000;
+export const DELIVERY_PRICE: Number = 3000;
 
 export interface DetailType {
   dish: DishType;

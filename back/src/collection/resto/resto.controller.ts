@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { ControllerRead } from "../../common/controller-read.interface";
-import { ControllerWrite } from "../../common/controller-write.interface";
+import { ControllerRead } from "../../common/controller/controller-read.interface";
+import { ControllerWrite } from "../../common/controller/controller-write.interface";
 import { wrapToSendBackResponse } from "../../common/wrap-to-send-back-response";
 import { Resto } from "./resto.interface";
 import { restoService } from "./resto.service";

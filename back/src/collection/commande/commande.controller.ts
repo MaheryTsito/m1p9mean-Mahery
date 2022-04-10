@@ -2,40 +2,49 @@ import { NextFunction, Request, Response } from "express";
 import { ControllerRead } from "../../common/controller/controller-read.interface";
 import { ControllerWrite } from "../../common/controller/controller-write.interface";
 import { wrapToSendBackResponse } from "../../common/wrap-to-send-back-response";
-import { AuthenticationResponse, User } from "./user.interface";
-import { userService } from "./user.service";
+import { Commande } from "./commande.interface";
+import { commandeService } from "./commande.service";
 
-class UserController implements ControllerRead, ControllerWrite {
+class CommandeController implements ControllerRead, ControllerWrite {
   create(req: Request, res: Response, next: NextFunction): void {
-    wrapToSendBackResponse<User>(userService.create(req.body), res, next);
+    wrapToSendBackResponse<Commande>(
+      commandeService.create(req.body),
+      res,
+      next
+    );
   }
 
   delete(req: Request, res: Response, next: NextFunction): void {
     wrapToSendBackResponse<boolean>(
-      userService.delete(req.params.userId),
+      commandeService.delete(req.params.commandeId),
       res,
       next
     );
   }
 
   update(req: Request, res: Response, next: NextFunction): void {
-    wrapToSendBackResponse<User | null>(
-      userService.update(req.body),
+    wrapToSendBackResponse<Commande | null>(
+      commandeService.update(req.body),
       res,
       next
     );
   }
 
   getAll(req: Request, res: Response, next: NextFunction): void {
-    wrapToSendBackResponse<User[] | null>(userService.getAll(), res, next);
+    wrapToSendBackResponse<Commande[] | null>(
+      commandeService.getAll(),
+      res,
+      next
+    );
   }
 
   getById(req: Request, res: Response, next: NextFunction): void {
-    wrapToSendBackResponse<User | null>(
-      userService.getById(req.params.userId),
+    wrapToSendBackResponse<Commande | null>(
+      commandeService.getById(req.params.commandeId),
       res,
       next
     );
   }
 }
-export const userController = new UserController();
+
+export const commandeController = new CommandeController();

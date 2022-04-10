@@ -1,8 +1,8 @@
 import { Router } from "express";
-import passport from "../../app/app.authentication";
-import { restoController } from "./resto.controller";
+import * as passport from "passport";
+import { dishController } from "./dish.controller";
 
-class RestoRoute {
+class DishRoute {
   router: Router;
 
   constructor() {
@@ -15,28 +15,27 @@ class RestoRoute {
       .route("/")
       .get(
         passport.authenticate("jwt", { session: false }),
-        restoController.getAll.bind(restoController)
+        dishController.getAll.bind(dishController)
       )
       .post(
         passport.authenticate("jwt", { session: false }),
-        restoController.create.bind(restoController)
+        dishController.create.bind(dishController)
       );
     this.router
-      .route("/:restoId")
+      .route("/:dishId")
       .get(
         passport.authenticate("jwt", { session: false }),
-        restoController.getById.bind(restoController)
+        dishController.getById.bind(dishController)
       )
       .put(
         passport.authenticate("jwt", { session: false }),
-        restoController.update.bind(restoController)
+        dishController.update.bind(dishController)
       )
       .delete(
         passport.authenticate("jwt", { session: false }),
-        restoController.delete.bind(restoController)
+        dishController.delete.bind(dishController)
       );
   }
 }
-const restoRoute = new RestoRoute();
 
-export const restoRoutes = restoRoute.router;
+export const dishRoutes = new DishRoute();

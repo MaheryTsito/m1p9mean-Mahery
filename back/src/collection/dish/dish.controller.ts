@@ -2,40 +2,41 @@ import { NextFunction, Request, Response } from "express";
 import { ControllerRead } from "../../common/controller/controller-read.interface";
 import { ControllerWrite } from "../../common/controller/controller-write.interface";
 import { wrapToSendBackResponse } from "../../common/wrap-to-send-back-response";
-import { AuthenticationResponse, User } from "./user.interface";
-import { userService } from "./user.service";
+import { DishType } from "./dish.interface";
+import { dishService } from "./dish.service";
 
-class UserController implements ControllerRead, ControllerWrite {
+class DishController implements ControllerRead, ControllerWrite {
   create(req: Request, res: Response, next: NextFunction): void {
-    wrapToSendBackResponse<User>(userService.create(req.body), res, next);
+    wrapToSendBackResponse<DishType[] | null>(dishService.getAll(), res, next);
   }
 
   delete(req: Request, res: Response, next: NextFunction): void {
     wrapToSendBackResponse<boolean>(
-      userService.delete(req.params.userId),
+      dishService.delete(req.params.dishId),
       res,
       next
     );
   }
 
   update(req: Request, res: Response, next: NextFunction): void {
-    wrapToSendBackResponse<User | null>(
-      userService.update(req.body),
+    wrapToSendBackResponse<DishType | null>(
+      dishService.update(req.body),
       res,
       next
     );
   }
 
   getAll(req: Request, res: Response, next: NextFunction): void {
-    wrapToSendBackResponse<User[] | null>(userService.getAll(), res, next);
+    wrapToSendBackResponse<DishType[] | null>(dishService.getAll(), res, next);
   }
 
   getById(req: Request, res: Response, next: NextFunction): void {
-    wrapToSendBackResponse<User | null>(
-      userService.getById(req.params.userId),
+    wrapToSendBackResponse<DishType | null>(
+      dishService.getById(req.params.dishId),
       res,
       next
     );
   }
 }
-export const userController = new UserController();
+
+export const dishController = new DishController();
