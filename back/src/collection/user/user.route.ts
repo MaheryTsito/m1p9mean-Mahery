@@ -19,6 +19,10 @@ class UserRouter {
       .get(userController.getById.bind(userController))
       .put(userController.update.bind(userController))
       .delete(userController.delete.bind(userController));
+    this.router
+      .route("/signup")
+      .post(userController.signUp.bind(userController));
+    this.router.route("/login").post(userController.login.bind(userController));
   }
 }
 
