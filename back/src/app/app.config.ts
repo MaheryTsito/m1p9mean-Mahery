@@ -14,4 +14,10 @@ export const config = {
     secretKey: env.get("JWT_SECRET").required().asString(),
     expiration: env.get("JWT_EXPIRATION").required().asIntPositive(),
   },
+  smtp: {
+    host: env.get("SMTP_HOST").required().asString(),
+    port: env.get("SMTP_PORT").required().asPortNumber(),
+    user: env.get("SMTP_USER").required().asString(),
+    password: env.get("SMTP_PASSWORD").required().asString(),
+  },
 };
